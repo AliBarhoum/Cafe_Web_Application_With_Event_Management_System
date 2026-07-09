@@ -1,0 +1,74 @@
+/* ===== CSS Variables for Light & Dark Themes ===== */
+:root {
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f8ff;    /* Light blue tint */
+  --bg-card: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #16213e;
+  --text-muted: #4a4a6a;
+  --border-color: #d4e6f1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #4a90d9;     /* Light blue accent */
+  --accent-hover: #357abd;
+  --success-color: #27ae60;
+  --navbar-bg: #f8fbff;
+  --card-shadow: 0 4px 12px rgba(74, 144, 217, 0.15);
+  --transition: 0.3s ease;
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #1e2a4a;
+  --text-primary: #e8e8f0;
+  --text-secondary: #c8d0e8;
+  --text-muted: #a0a8c8;
+  --border-color: #2a3a5a;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --accent-color: #6ab0ff;
+  --accent-hover: #4a90d9;
+  --navbar-bg: #0f1a2e;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Global Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition), color var(--transition);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+button {
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+
+/* ===== Container for pages ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== Utility Classes ===== */
+.text-center {
+  text-align: center;
+}
+.mt-2 { margin-top: 20px; }
+.mb-2 { margin-bottom: 20px; }

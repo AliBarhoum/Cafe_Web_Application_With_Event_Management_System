@@ -1,0 +1,83 @@
+### Variables (adjust the base URL to match your backend)
+# @ssl-allow-unauthorized true
+
+@baseUrl = https://localhost:5001
+@contentType = application/json
+
+### Rest of your requests...
+
+@baseUrl = http://localhost:5134
+@contentType = application/json
+
+### ------------------------------------------------------------
+### 1. REGISTER A NEW CUSTOMER (add a user)
+### This creates a new account with the "Customer" role (by default)
+### ------------------------------------------------------------
+POST {{baseUrl}}/api/account/register
+Content-Type: {{contentType}}
+
+{
+  "email": "john.doe@example.com",
+  "password": "P@ssw0rd123!",
+  "firstName": "John",
+  "lastName": "Doe"
+}
+
+### ------------------------------------------------------------
+### 2. LOGIN (to get an authentication cookie)
+### After login, subsequent requests will include the cookie automatically
+### ------------------------------------------------------------
+POST {{baseUrl}}/api/account/login
+Content-Type: {{contentType}}
+
+{
+  "email": "john.doe@example.com",
+  "password": "P@ssw0rd123!",
+  "rememberMe": false
+}
+
+### ------------------------------------------------------------
+### 3. GET ALL EVENTS (public)
+### ------------------------------------------------------------
+GET {{baseUrl}}/api/events
+
+### ------------------------------------------------------------
+### 4. REGISTER FOR AN EVENT (requires authentication)
+### Replace 1 with the actual event ID you want to join
+### ------------------------------------------------------------
+POST {{baseUrl}}/api/events/1/register
+
+### ------------------------------------------------------------
+### 5. ADD A NEW EVENT (only Admin)
+### Use the admin credentials from Program.cs: admin@cafe.com / Admin123!
+### First login as admin, then call this endpoint
+### ------------------------------------------------------------
+POST {{baseUrl}}/api/events
+Content-Type: {{contentType}}
+
+{
+  "title": "Live Jazz Night",
+  "description": "Enjoy an evening of smooth jazz with local artists.",
+  "startDate": "2026-07-15T20:00:00",
+  "endDate": "2026-07-15T23:00:00",
+}
+
+### ------------------------------------------------------------
+### 6. GET CURRENT USER INFO (requires authentication)
+### ------------------------------------------------------------
+GET {{baseUrl}}/api/account/current-user
+
+### ------------------------------------------------------------
+### 7. LOGOUT
+### ------------------------------------------------------------
+POST {{baseUrl}}/api/account/logout
+
+###
+POST {{baseUrl}}/api/account/login
+Content-Type: {{contentType}}
+
+{
+  "email": "admin@cafe.com",
+  "password": "Admin123!",
+  "rememberMe": false
+}

@@ -1,0 +1,80 @@
+/* ===== Home Page Styles ===== */
+.home-page {
+  padding: 40px 20px;
+  background-color: var(--bg-secondary);
+  min-height: calc(100vh - 80px);
+  transition: background-color var(--transition);
+}
+
+.hero-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition);
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.hero-section h1 .highlight {
+  color: var(--accent-color);
+}
+
+.hero-section p {
+  font-size: 20px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.hero-image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.feature-card .icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
