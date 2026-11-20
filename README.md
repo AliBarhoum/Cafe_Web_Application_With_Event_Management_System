@@ -335,7 +335,3 @@ This is a **solo student project**, but issues and PRs are welcome.
 3. Make sure `npm run lint`, `npm run build`, and `dotnet build` pass.
 4. Commit: `git commit -m "feat: my feature"`.
 5. Push and open a Pull Request.
-
-## License
-
-This project is private and is not currently published under an open-source license. Add a `LICENSE` file if you intend to open source it.
