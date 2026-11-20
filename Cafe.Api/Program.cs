@@ -133,7 +133,12 @@ using (var scope = app.Services.CreateScope())
             FirstName = "Admin",
             LastName = "User"
         };
-        var result = await userManager.CreateAsync(adminUser, "Admin123!");
+
+        // Read admin password from configuration (User Secrets / env vars)
+        var adminPassword = builder.Configuration["Seed:AdminPassword"]
+            ?? throw new Exception("Seed:AdminPassword is not configured.");
+
+        var result = await userManager.CreateAsync(adminUser, adminPassword);
         if (result.Succeeded)
             await userManager.AddToRoleAsync(adminUser, "Admin");
     }
